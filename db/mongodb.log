@@ -1,0 +1,189 @@
+2014-05-17T17:02:18.479-0700 [initandlisten] MongoDB starting : pid=11370 port=27017 dbpath=/Users/log/projects/javascript/api/mongodb 64-bit host=logbook.local
+2014-05-17T17:02:18.479-0700 [initandlisten] 
+2014-05-17T17:02:18.479-0700 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2014-05-17T17:02:18.479-0700 [initandlisten] db version v2.6.0
+2014-05-17T17:02:18.479-0700 [initandlisten] git version: nogitversion
+2014-05-17T17:02:18.479-0700 [initandlisten] build info: Darwin minimavericks.local 13.1.0 Darwin Kernel Version 13.1.0: Thu Jan 16 19:40:37 PST 2014; root:xnu-2422.90.20~2/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2014-05-17T17:02:18.479-0700 [initandlisten] allocator: tcmalloc
+2014-05-17T17:02:18.479-0700 [initandlisten] options: { config: "mongod.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/log/projects/javascript/api/mongodb" }, systemLog: { destination: "file", logAppend: true, path: "/Users/log/projects/javascript/api/mongodb.log", quiet: true } }
+2014-05-17T17:02:18.479-0700 [initandlisten] exception in initAndListen: 10309 Unable to create/open lock file: /Users/log/projects/javascript/api/mongodb/mongod.lock errno:20 Not a directory Is a mongod instance already running?, terminating
+2014-05-17T17:02:18.479-0700 [initandlisten] dbexit: 
+2014-05-17T17:02:18.479-0700 [initandlisten] shutdown: going to close listening sockets...
+2014-05-17T17:02:18.479-0700 [initandlisten] shutdown: going to flush diaglog...
+2014-05-17T17:02:18.480-0700 [initandlisten] shutdown: going to close sockets...
+2014-05-17T17:02:18.480-0700 [initandlisten] shutdown: waiting for fs preallocator...
+2014-05-17T17:02:18.480-0700 [initandlisten] shutdown: lock for final commit...
+2014-05-17T17:02:18.480-0700 [initandlisten] shutdown: final commit...
+2014-05-17T17:02:18.480-0700 [initandlisten] shutdown: closing all files...
+2014-05-17T17:02:18.480-0700 [initandlisten] closeAllFiles() finished
+2014-05-17T17:02:18.480-0700 [initandlisten] shutdown: removing fs lock...
+2014-05-17T17:02:18.480-0700 [initandlisten] couldn't remove fs lock errno:9 Bad file descriptor
+2014-05-17T17:02:18.480-0700 [initandlisten] dbexit: really exiting now
+2014-05-17T17:06:04.463-0700 ***** SERVER RESTARTED *****
+2014-05-17T17:06:04.479-0700 [initandlisten] MongoDB starting : pid=11653 port=27017 dbpath=/Users/log/projects/javascript/api/mongodb 64-bit host=logbook.local
+2014-05-17T17:06:04.479-0700 [initandlisten] 
+2014-05-17T17:06:04.479-0700 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2014-05-17T17:06:04.479-0700 [initandlisten] db version v2.6.0
+2014-05-17T17:06:04.479-0700 [initandlisten] git version: nogitversion
+2014-05-17T17:06:04.479-0700 [initandlisten] build info: Darwin minimavericks.local 13.1.0 Darwin Kernel Version 13.1.0: Thu Jan 16 19:40:37 PST 2014; root:xnu-2422.90.20~2/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2014-05-17T17:06:04.479-0700 [initandlisten] allocator: tcmalloc
+2014-05-17T17:06:04.479-0700 [initandlisten] options: { config: "mongod.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/log/projects/javascript/api/mongodb" }, systemLog: { destination: "file", logAppend: true, path: "/Users/log/projects/javascript/api/mongodb.log", quiet: true } }
+2014-05-17T17:06:04.480-0700 [initandlisten] journal dir=/Users/log/projects/javascript/api/mongodb/journal
+2014-05-17T17:06:04.480-0700 [initandlisten] recover : no journal files present, no recovery needed
+2014-05-17T17:06:04.514-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/api/mongodb/local.ns, filling with zeroes...
+2014-05-17T17:06:04.514-0700 [FileAllocator] creating directory /Users/log/projects/javascript/api/mongodb/_tmp
+2014-05-17T17:06:04.553-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/api/mongodb/local.ns, size: 16MB,  took 0.038 secs
+2014-05-17T17:06:04.775-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/api/mongodb/local.0, filling with zeroes...
+2014-05-17T17:06:05.471-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/api/mongodb/local.0, size: 64MB,  took 0.696 secs
+2014-05-17T17:06:05.772-0700 [initandlisten] build index on: local.startup_log properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "local.startup_log" }
+2014-05-17T17:06:05.773-0700 [initandlisten] 	 added index to empty collection
+2014-05-17T17:06:05.773-0700 [initandlisten] command local.$cmd command: create { create: "startup_log", size: 10485760, capped: true } ntoreturn:1 keyUpdates:0 numYields:0  reslen:37 1258ms
+2014-05-17T17:06:05.773-0700 [initandlisten] waiting for connections on port 27017
+2014-05-17T17:27:32.433-0700 [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2014-05-17T17:27:32.438-0700 [signalProcessingThread] now exiting
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] dbexit: 
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] shutdown: going to close listening sockets...
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] closing listening socket: 9
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] closing listening socket: 10
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] shutdown: going to flush diaglog...
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] shutdown: going to close sockets...
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] shutdown: waiting for fs preallocator...
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] shutdown: lock for final commit...
+2014-05-17T17:27:32.441-0700 [signalProcessingThread] shutdown: final commit...
+2014-05-17T17:27:32.455-0700 [signalProcessingThread] shutdown: closing all files...
+2014-05-17T17:27:32.455-0700 [signalProcessingThread] closeAllFiles() finished
+2014-05-17T17:27:32.455-0700 [signalProcessingThread] journalCleanup...
+2014-05-17T17:27:32.455-0700 [signalProcessingThread] removeJournalFiles
+2014-05-17T17:27:32.455-0700 [signalProcessingThread] error removing journal files boost::filesystem::directory_iterator::construct: No such file or directory: "/Users/log/projects/javascript/api/mongodb/journal"
+2014-05-17T17:27:32.455-0700 [signalProcessingThread] error couldn't remove journal file during shutdown boost::filesystem::directory_iterator::construct: No such file or directory: "/Users/log/projects/javascript/api/mongodb/journal"
+2014-05-17T17:27:32.456-0700 [signalProcessingThread] SEVERE: shutdown failed with exception
+2014-05-17T17:27:32.456-0700 [signalProcessingThread] dbexit: really exiting now
+2014-05-17T17:27:45.625-0700 ***** SERVER RESTARTED *****
+2014-05-17T17:27:45.642-0700 [initandlisten] MongoDB starting : pid=12891 port=27017 dbpath=/Users/log/projects/javascript/api/db/mongodb 64-bit host=logbook.local
+2014-05-17T17:27:45.642-0700 [initandlisten] 
+2014-05-17T17:27:45.642-0700 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2014-05-17T17:27:45.642-0700 [initandlisten] db version v2.6.0
+2014-05-17T17:27:45.642-0700 [initandlisten] git version: nogitversion
+2014-05-17T17:27:45.642-0700 [initandlisten] build info: Darwin minimavericks.local 13.1.0 Darwin Kernel Version 13.1.0: Thu Jan 16 19:40:37 PST 2014; root:xnu-2422.90.20~2/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2014-05-17T17:27:45.642-0700 [initandlisten] allocator: tcmalloc
+2014-05-17T17:27:45.642-0700 [initandlisten] options: { config: "mongod.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/log/projects/javascript/api/db/mongodb" }, systemLog: { destination: "file", logAppend: true, path: "/Users/log/projects/javascript/api/db/mongodb.log", quiet: true } }
+2014-05-17T17:27:45.651-0700 [initandlisten] journal dir=/Users/log/projects/javascript/api/db/mongodb/journal
+2014-05-17T17:27:45.651-0700 [initandlisten] recover begin
+2014-05-17T17:27:45.652-0700 [initandlisten] info no lsn file in journal/ directory
+2014-05-17T17:27:45.652-0700 [initandlisten] recover lsn: 0
+2014-05-17T17:27:45.652-0700 [initandlisten] recover /Users/log/projects/javascript/api/db/mongodb/journal/j._0
+2014-05-17T17:27:45.663-0700 [initandlisten] recover create file /Users/log/projects/javascript/api/db/mongodb/local.ns 16MB
+2014-05-17T17:27:45.853-0700 [initandlisten] recover create file /Users/log/projects/javascript/api/db/mongodb/local.0 64MB
+2014-05-17T17:27:46.533-0700 [initandlisten] recover cleaning up
+2014-05-17T17:27:46.533-0700 [initandlisten] removeJournalFiles
+2014-05-17T17:27:46.537-0700 [initandlisten] recover done
+2014-05-17T17:27:46.607-0700 [initandlisten] waiting for connections on port 27017
+2014-05-17T18:23:42.021-0700 [DataFileSync] flushing mmaps took 468966ms  for 4 files
+2014-05-17T19:50:41.820-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/api/db/mongodb/api.ns, filling with zeroes...
+2014-05-17T19:50:41.825-0700 [FileAllocator] creating directory /Users/log/projects/javascript/api/db/mongodb/_tmp
+2014-05-17T19:50:41.863-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/api/db/mongodb/api.ns, size: 16MB,  took 0.036 secs
+2014-05-17T19:50:42.073-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/api/db/mongodb/api.0, filling with zeroes...
+2014-05-17T19:50:42.608-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/api/db/mongodb/api.0, size: 64MB,  took 0.535 secs
+2014-05-17T19:50:42.810-0700 [conn216] build index on: api.users properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "api.users" }
+2014-05-17T19:50:42.819-0700 [conn216] 	 added index to empty collection
+2014-05-17T19:50:42.819-0700 [conn216] insert api.users query: { email: "mail@jacer.info", fname: "Jacer", lname: "Omri", _id: ObjectId('53782001d54c4f2e522d0c61'), __v: 0 } ninserted:1 keyUpdates:0 numYields:0 locks(micros) w:998969 998ms
+2014-05-17T19:50:42.819-0700 [conn216] command api.$cmd command: insert { insert: "users", writeConcern: { w: 1 }, ordered: true, documents: [ { email: "mail@jacer.info", fname: "Jacer", lname: "Omri", _id: ObjectId('53782001d54c4f2e522d0c61'), __v: 0 } ] } keyUpdates:0 numYields:0 locks(micros) w:81 reslen:40 999ms
+2014-05-17T19:55:54.540-0700 [conn219] query api.collection planSummary: EOF ntoreturn:0 ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 numYields:0 locks(micros) r:338790 nreturned:0 reslen:20 338ms
+2014-05-17T20:09:08.435-0700 [conn219] query api.api.user planSummary: EOF ntoreturn:0 ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 numYields:0 locks(micros) r:347866 nreturned:0 reslen:20 347ms
+2014-05-17T20:09:28.512-0700 [conn219] query api.user planSummary: EOF ntoreturn:0 ntoskip:0 nscanned:0 nscannedObjects:0 keyUpdates:0 numYields:0 locks(micros) r:345741 nreturned:0 reslen:20 345ms
+2014-05-17T21:17:24.178-0700 [DataFileSync] flushing mmaps took 1288837ms  for 5 files
+2014-05-17T21:37:11.759-0700 [journal] In File::open(), ::open for '/Users/log/projects/javascript/api/db/mongodb/journal/lsn' failed with errno:2 No such file or directory
+2014-05-17T21:37:11.760-0700 [journal] warning: open of lsn file failed
+2014-05-17T22:16:48.313-0700 [DataFileSync] flushing mmaps took 1258822ms  for 5 files
+2014-05-17T22:19:36.228-0700 ***** SERVER RESTARTED *****
+2014-05-17T22:19:36.247-0700 [initandlisten] MongoDB starting : pid=25467 port=27017 dbpath=/Users/log/projects/javascript/apis/db/mongodb 64-bit host=logbook.local
+2014-05-17T22:19:36.248-0700 [initandlisten] 
+2014-05-17T22:19:36.248-0700 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2014-05-17T22:19:36.248-0700 [initandlisten] db version v2.6.0
+2014-05-17T22:19:36.248-0700 [initandlisten] git version: nogitversion
+2014-05-17T22:19:36.248-0700 [initandlisten] build info: Darwin minimavericks.local 13.1.0 Darwin Kernel Version 13.1.0: Thu Jan 16 19:40:37 PST 2014; root:xnu-2422.90.20~2/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2014-05-17T22:19:36.248-0700 [initandlisten] allocator: tcmalloc
+2014-05-17T22:19:36.248-0700 [initandlisten] options: { config: "mongod.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/log/projects/javascript/apis/db/mongodb" }, systemLog: { destination: "file", logAppend: true, path: "/Users/log/projects/javascript/apis/db/mongodb.log", quiet: true } }
+2014-05-17T22:19:36.254-0700 [initandlisten] journal dir=/Users/log/projects/javascript/apis/db/mongodb/journal
+2014-05-17T22:19:36.254-0700 [initandlisten] recover begin
+2014-05-17T22:19:36.254-0700 [initandlisten] recover lsn: 9615209
+2014-05-17T22:19:36.254-0700 [initandlisten] recover /Users/log/projects/javascript/apis/db/mongodb/journal/j._0
+2014-05-17T22:19:36.260-0700 [initandlisten] recover skipping application of section seq:0 < lsn:9615209
+2014-05-17T22:19:36.260-0700 [initandlisten] recover skipping application of section seq:7184538 < lsn:9615209
+2014-05-17T22:19:36.260-0700 [initandlisten] recover skipping application of section seq:7239238 < lsn:9615209
+2014-05-17T22:19:36.260-0700 [initandlisten] recover skipping application of section seq:7294318 < lsn:9615209
+2014-05-17T22:19:36.260-0700 [initandlisten] recover skipping application of section seq:9394964 < lsn:9615209
+2014-05-17T22:19:36.260-0700 [initandlisten] recover skipping application of section seq:9505189 < lsn:9615209
+2014-05-17T22:19:36.478-0700 [initandlisten] recover cleaning up
+2014-05-17T22:19:36.478-0700 [initandlisten] removeJournalFiles
+2014-05-17T22:19:36.482-0700 [initandlisten] recover done
+2014-05-17T22:19:36.720-0700 [initandlisten] ERROR: listen(): bind() failed errno:48 Address already in use for socket: 127.0.0.1:27017
+2014-05-17T22:19:36.721-0700 [initandlisten] ERROR:   addr already in use
+2014-05-17T22:19:36.743-0700 [initandlisten] now exiting
+2014-05-17T22:19:36.743-0700 [initandlisten] dbexit: 
+2014-05-17T22:19:36.743-0700 [initandlisten] shutdown: going to close listening sockets...
+2014-05-17T22:19:36.743-0700 [initandlisten] shutdown: going to flush diaglog...
+2014-05-17T22:19:36.743-0700 [initandlisten] shutdown: going to close sockets...
+2014-05-17T22:19:36.743-0700 [initandlisten] shutdown: waiting for fs preallocator...
+2014-05-17T22:19:36.743-0700 [initandlisten] shutdown: lock for final commit...
+2014-05-17T22:19:36.743-0700 [initandlisten] shutdown: final commit...
+2014-05-17T22:19:36.770-0700 [initandlisten] shutdown: closing all files...
+2014-05-17T22:19:36.777-0700 [initandlisten] closeAllFiles() finished
+2014-05-17T22:19:36.777-0700 [initandlisten] journalCleanup...
+2014-05-17T22:19:36.777-0700 [initandlisten] removeJournalFiles
+2014-05-17T22:19:36.778-0700 [initandlisten] shutdown: removing fs lock...
+2014-05-17T22:19:36.778-0700 [initandlisten] dbexit: really exiting now
+2014-05-17T22:22:45.121-0700 ***** SERVER RESTARTED *****
+2014-05-17T22:22:45.137-0700 [initandlisten] MongoDB starting : pid=25788 port=27017 dbpath=/Users/log/projects/javascript/apis/db/mongodb 64-bit host=logbook.local
+2014-05-17T22:22:45.137-0700 [initandlisten] 
+2014-05-17T22:22:45.137-0700 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2014-05-17T22:22:45.137-0700 [initandlisten] db version v2.6.0
+2014-05-17T22:22:45.137-0700 [initandlisten] git version: nogitversion
+2014-05-17T22:22:45.137-0700 [initandlisten] build info: Darwin minimavericks.local 13.1.0 Darwin Kernel Version 13.1.0: Thu Jan 16 19:40:37 PST 2014; root:xnu-2422.90.20~2/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2014-05-17T22:22:45.137-0700 [initandlisten] allocator: tcmalloc
+2014-05-17T22:22:45.137-0700 [initandlisten] options: { config: "mongod.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/log/projects/javascript/apis/db/mongodb" }, systemLog: { destination: "file", logAppend: true, path: "/Users/log/projects/javascript/apis/db/mongodb.log", quiet: true } }
+2014-05-17T22:22:45.138-0700 [initandlisten] journal dir=/Users/log/projects/javascript/apis/db/mongodb/journal
+2014-05-17T22:22:45.138-0700 [initandlisten] recover : no journal files present, no recovery needed
+2014-05-17T22:22:45.224-0700 [initandlisten] waiting for connections on port 27017
+2014-05-17T22:22:59.310-0700 [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2014-05-17T22:22:59.310-0700 [signalProcessingThread] now exiting
+2014-05-17T22:22:59.310-0700 [signalProcessingThread] dbexit: 
+2014-05-17T22:22:59.310-0700 [signalProcessingThread] shutdown: going to close listening sockets...
+2014-05-17T22:22:59.310-0700 [signalProcessingThread] closing listening socket: 9
+2014-05-17T22:22:59.310-0700 [signalProcessingThread] closing listening socket: 10
+2014-05-17T22:22:59.310-0700 [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2014-05-17T22:22:59.311-0700 [signalProcessingThread] shutdown: going to flush diaglog...
+2014-05-17T22:22:59.311-0700 [signalProcessingThread] shutdown: going to close sockets...
+2014-05-17T22:22:59.311-0700 [signalProcessingThread] shutdown: waiting for fs preallocator...
+2014-05-17T22:22:59.311-0700 [signalProcessingThread] shutdown: lock for final commit...
+2014-05-17T22:22:59.311-0700 [signalProcessingThread] shutdown: final commit...
+2014-05-17T22:22:59.336-0700 [signalProcessingThread] shutdown: closing all files...
+2014-05-17T22:22:59.338-0700 [signalProcessingThread] closeAllFiles() finished
+2014-05-17T22:22:59.338-0700 [signalProcessingThread] journalCleanup...
+2014-05-17T22:22:59.338-0700 [signalProcessingThread] removeJournalFiles
+2014-05-17T22:22:59.339-0700 [signalProcessingThread] shutdown: removing fs lock...
+2014-05-17T22:22:59.339-0700 [signalProcessingThread] dbexit: really exiting now
+2014-05-17T22:23:24.717-0700 ***** SERVER RESTARTED *****
+2014-05-17T22:23:24.733-0700 [initandlisten] MongoDB starting : pid=25941 port=27017 dbpath=/Users/log/projects/javascript/apis/db/mongodb 64-bit host=logbook.local
+2014-05-17T22:23:24.733-0700 [initandlisten] 
+2014-05-17T22:23:24.733-0700 [initandlisten] ** WARNING: soft rlimits too low. Number of files is 256, should be at least 1000
+2014-05-17T22:23:24.733-0700 [initandlisten] db version v2.6.0
+2014-05-17T22:23:24.733-0700 [initandlisten] git version: nogitversion
+2014-05-17T22:23:24.733-0700 [initandlisten] build info: Darwin minimavericks.local 13.1.0 Darwin Kernel Version 13.1.0: Thu Jan 16 19:40:37 PST 2014; root:xnu-2422.90.20~2/RELEASE_X86_64 x86_64 BOOST_LIB_VERSION=1_49
+2014-05-17T22:23:24.733-0700 [initandlisten] allocator: tcmalloc
+2014-05-17T22:23:24.734-0700 [initandlisten] options: { config: "mongod.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/Users/log/projects/javascript/apis/db/mongodb" }, systemLog: { destination: "file", logAppend: true, path: "/Users/log/projects/javascript/apis/db/mongodb.log", quiet: true } }
+2014-05-17T22:23:24.734-0700 [initandlisten] journal dir=/Users/log/projects/javascript/apis/db/mongodb/journal
+2014-05-17T22:23:24.734-0700 [initandlisten] recover : no journal files present, no recovery needed
+2014-05-17T22:23:24.812-0700 [initandlisten] waiting for connections on port 27017
+2014-05-17T22:33:38.983-0700 [conn1] dropDatabase api starting
+2014-05-17T22:33:39.010-0700 [conn1] removeJournalFiles
+2014-05-17T22:33:39.016-0700 [conn1] dropDatabase api finished
+2014-05-17T23:44:30.938-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/apis/db/mongodb/api.ns, filling with zeroes...
+2014-05-17T23:44:30.942-0700 [FileAllocator] creating directory /Users/log/projects/javascript/apis/db/mongodb/_tmp
+2014-05-17T23:44:31.302-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/apis/db/mongodb/api.ns, size: 16MB,  took 0.359 secs
+2014-05-17T23:44:31.497-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/apis/db/mongodb/api.0, filling with zeroes...
+2014-05-17T23:44:32.020-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/apis/db/mongodb/api.0, size: 64MB,  took 0.522 secs
+2014-05-17T23:44:32.224-0700 [conn73] build index on: api.users properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "api.users" }
+2014-05-17T23:44:32.231-0700 [conn73] 	 added index to empty collection
+2014-05-17T23:44:32.231-0700 [conn73] insert api.users ninserted:1 keyUpdates:0 numYields:0 locks(micros) w:1292998 1293ms
