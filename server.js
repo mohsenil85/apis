@@ -43,6 +43,11 @@ var UserSchema = new Schema({
 var User = mongoose.model('User', UserSchema);
 
 
+router.use(function(req, res, next){
+  console.log(req.method + " :  " + req.url);
+  next();
+});
+
 app.get('/', function(req, res){
   res.json({message: 'testing'});
 });
@@ -62,12 +67,35 @@ router.route('/users')
       if (err) res.send(err);
       res.json(users);
     });
-  })
+  });
 
-router.use(function(req, res, next){
-  console.log('somethign happned');
-  next();
-});
+router.route('/users/:user_id')
+  .get(function(req, res){
+    User.findById(req.params.user_id, function(err, user){
+      if (err) res.send(err);
+      res.json(user);
+    });
+  })
+  .put(function(req, res){
+    User.findById(req.params.user_id, function(err, user){
+      if (err) res.send(err);
+      user.name = req.body.name;
+      user.save(function(err){
+        if (err) res.send(err);
+        res.json({message: 'User updated'});
+      });
+    });
+  })
+  .delete(function(req, res){
+    User.remove({
+      _id : req.params.user_id
+    }, function(err, user){
+      if (err) res.send(err);
+      res.json({message: 'User deleted'});
+    });
+  });
+    
+
 
 app.use('/api', router);
 app.listen(port);
