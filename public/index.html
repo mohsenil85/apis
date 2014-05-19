@@ -11,16 +11,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <style>
-            body {
-                padding-top: 50px;
-                padding-bottom: 20px;
-            }
-        </style>
         <link rel="stylesheet" href="css/flat-ui.css">
         <link rel="stylesheet" href="css/main.css">
 
-        <!--        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script> -->
+        <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
         <script data-main="js/main" src="js/vendor/require.js"></script>
 
     </head>
@@ -30,80 +24,8 @@
         <![endif]-->
         <div class="container">
           <h1 id='home'>User Mang</h1>
-          <!--<h1 id='home'><a href='#'>  User Mang  </a> </h1> -->
           <hr />
           <div class="page"></div>
         </div>
-
-        <!--
-        <script  id='edit-user-template' type='text/template'>
-          <form role='form' class='edit-user-form container  col-md-8 form-horizontal'>
-              <legend><%= user ? 'Update' : 'Create' %> User </legend>
-            <div class='form-group'>
-              <lable>First Name</lable>
-              <input type="text" name="firstName" class="form-control" 
-              value="<%= user ? user.get('firstName') : '' %>" />
-            </div>
-            <div class='form-group'>
-              <lable>Last Name</lable>
-              <input type="text" name="lastName" class="form-control"  value="<%= user ? user.get('lastName') : '' %>"  />
-            </div>
-            <div class='form-group'>
-              <lable>Age</lable>
-              <input type="text" name="age" class="form-control"  value="<%= user ? user.get('age') : '' %>" />
-            </div>
-            <div class='form-group'>
-              <lable>Email</lable>
-              <input type="email" name="email" class="form-control" value="<%= user ? user.get('email') : '' %>" />
-            </div>
-            <hr />
-
-            <button type="submit" class="btn"> <%= user ? 'Update' : 'Create' %> </button>
-            <% if (user) { %>
-              <input type="hidden" name="_id" value="<%= user.attributes._id %>" />
-            <button type= "button" class="btn btn-danger delete-user">Delete</button>
-            <% }; %>
-          </form>
-        </script>
-
-        <script  id='user-list-template' type='text/template'>
-          <a href="#/new" class="btn btn-primary">New User</a>
-          <hr />
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Age</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% _.each(users, function(user){ %>
-                <tr>
-                  <td><%= user.get('firstName') %> </td>
-                  <td><%= user.get('lastName') %> </td>
-                  <td><%= user.get('email') %> </td>
-                  <td><%= user.get('age') %> </td>
-                  <td><a href='#/edit/<%= user.attributes._id %>' class='btn btn-default'>Edit</td>
-                </tr>
-
-             <% }); %>
-            </tbody>
-          </table
-        </script>
-        -->
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <!--
-        <script>
-            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-            e.src='//www.google-analytics.com/analytics.js';
-            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-            ga('create','UA-XXXXX-X');ga('send','pageview');
-        </script>
-        -->
     </body>
 </html>
