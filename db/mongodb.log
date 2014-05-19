@@ -232,3 +232,27 @@
 2014-05-19T08:03:13.273-0700 [signalProcessingThread] removeJournalFiles
 2014-05-19T08:03:13.273-0700 [signalProcessingThread] shutdown: removing fs lock...
 2014-05-19T08:03:13.275-0700 [signalProcessingThread] dbexit: really exiting now
+2014-05-19T08:19:48.868-0700 ***** SERVER RESTARTED *****
+2014-05-19T08:19:48.871-0700 [initandlisten] MongoDB starting : pid=31909 port=27017 dbpath=/home/lmohseni/projects/javascript/apis/db/mongodb 64-bit host=logbox2
+2014-05-19T08:19:48.871-0700 [initandlisten] db version v2.6.1
+2014-05-19T08:19:48.871-0700 [initandlisten] git version: 4b95b086d2374bdcfcdf2249272fb552c9c726e8
+2014-05-19T08:19:48.871-0700 [initandlisten] build info: Linux build14.nj1.10gen.cc 2.6.32-431.3.1.el6.x86_64 #1 SMP Fri Jan 3 21:39:27 UTC 2014 x86_64 BOOST_LIB_VERSION=1_49
+2014-05-19T08:19:48.871-0700 [initandlisten] allocator: tcmalloc
+2014-05-19T08:19:48.871-0700 [initandlisten] options: { config: "mongod.conf", net: { bindIp: "127.0.0.1", port: 27017 }, storage: { dbPath: "/home/lmohseni/projects/javascript/apis/db/mongodb" }, systemLog: { destination: "file", logAppend: true, path: "/home/lmohseni/projects/javascript/apis/db/mongodb.log", quiet: true } }
+2014-05-19T08:19:48.871-0700 [initandlisten] exception in initAndListen: 10296 
+*********************************************************************
+ ERROR: dbpath (/home/lmohseni/projects/javascript/apis/db/mongodb) does not exist.
+ Create this directory or give existing directory in --dbpath.
+ See http://dochub.mongodb.org/core/startingandstoppingmongo
+*********************************************************************
+, terminating
+2014-05-19T08:19:48.871-0700 [initandlisten] dbexit: 
+2014-05-19T08:19:48.871-0700 [initandlisten] shutdown: going to close listening sockets...
+2014-05-19T08:19:48.871-0700 [initandlisten] shutdown: going to flush diaglog...
+2014-05-19T08:19:48.871-0700 [initandlisten] shutdown: going to close sockets...
+2014-05-19T08:19:48.871-0700 [initandlisten] shutdown: waiting for fs preallocator...
+2014-05-19T08:19:48.871-0700 [initandlisten] shutdown: lock for final commit...
+2014-05-19T08:19:48.871-0700 [initandlisten] shutdown: final commit...
+2014-05-19T08:19:48.871-0700 [initandlisten] shutdown: closing all files...
+2014-05-19T08:19:48.871-0700 [initandlisten] closeAllFiles() finished
+2014-05-19T08:19:48.871-0700 [initandlisten] dbexit: really exiting now

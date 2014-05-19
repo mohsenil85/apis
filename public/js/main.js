@@ -44,8 +44,8 @@ var EditUser = Backbone.View.extend({
   render : function(options){
     var that = this; 
     if(options._id){
-      var user = new User({_id: options._id });
-      user.fetch({
+      that.user = new User({_id: options._id });
+      that.user.fetch({
         success: function(user){
           var template = _.template($('#edit-user-template').html(), {user: user});
           that.$el.html(template);
@@ -71,12 +71,13 @@ var EditUser = Backbone.View.extend({
     return false;
   },
   deleteUser : function(ev){
-    ev.preventDefault();
-    console.log($(ev.currentTarget));
-    var userDetails = $(ev.currentTarget).serializeObject();
-    console.log(userDetails);
+      this.user.destroy({
+          success: function(){
+              router.navigate('', {trigger: true});
+          }
+      });
+      return false;
   }
-
 });
 var Router = Backbone.Router.extend({
   routes: {

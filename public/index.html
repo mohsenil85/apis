@@ -52,12 +52,12 @@
               <input type="email" name="email" class="form-control" value="<%= user ? user.get('email') : '' %>" />
             </div>
             <hr />
-            <% if (user) { %>
-              <input type="hidden" name="_id" value="<%= user.attributes._id %>" />
-            <% } %>
 
             <button type="submit" class="btn"> <%= user ? 'Update' : 'Create' %> </button>
-            <button class="btn btn-danger delete-user">Delete</button>
+            <% if (user) { %>
+              <input type="hidden" name="_id" value="<%= user.attributes._id %>" />
+            <button type= "button" class="btn btn-danger delete-user">Delete</button>
+            <% }; %>
           </form>
         </script>
 
