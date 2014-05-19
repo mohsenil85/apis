@@ -1,4 +1,13 @@
 ({
+    appDir: "public",
+    baseUrl: "js",
+    dir: "out",
+    optimize: 'uglify',
+    modules: [
+        {
+        name: "main"
+    }
+    ],
     paths: {
         bootstrap: 'vendor/bootstrap.min',
 
@@ -11,14 +20,4 @@
         templates: '../templates'
 
     }
-        appDir: "./public",
-        baseUrl: "./public/js",
-        dir: "dist",
-        modules: [
-                {
-                    name: "main"
-                }
-            ]
-        cssIn : ./public/css/main.css
-        out: "dist/main.css"
 })
