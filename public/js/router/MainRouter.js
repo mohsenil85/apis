@@ -1,8 +1,9 @@
 define([
     'jquery',
     'underscore',
-    'backbone'
-], function ($, _, Backbone){
+    'backbone',
+    'models/userModel'
+], function ($, _, Backbone, UserModel){
     var MainRouter = Backbone.Router.extend({
         routes: {
             '' : 'home',
@@ -33,11 +34,13 @@ define([
             url : '/users'
         });
 
+        /*
         var User = Backbone.Model.extend({
             urlRoot : '/users',
             idAttribute : '_id'
         });
 
+        */
         var UserList = Backbone.View.extend({
             el: '.page',
             render: function (){
@@ -58,7 +61,7 @@ define([
             render : function(options){
                 var that = this; 
                 if(options._id){
-                    that.user = new User({_id: options._id });
+                    that.user = new UserModel({_id: options._id });
                     that.user.fetch({
                         success: function(user){
                             var template = _.template($('#edit-user-template').html(), {user: user});
@@ -76,7 +79,7 @@ define([
             },
             saveUser: function(ev){
                 var userDetails = $(ev.currentTarget).serializeObject();
-                var user = new User(); 
+                var user = new UserModel(); 
                 user.save(userDetails, {
                     success: function(user){
                         router.navigate('', {trigger: true});

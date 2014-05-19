@@ -1,101 +1,32 @@
-$.fn.serializeObject = function() {
-  var o = {};
-  var a = this.serializeArray();
-  $.each(a, function() {
-    if (o[this.name] !== undefined) {
-      if (!o[this.name].push) {
-        o[this.name] = [o[this.name]];
-      }
-      o[this.name].push(this.value || '');
-    } else {
-      o[this.name] = this.value || '';
-    }
-  });
-  return o;
-};
+require.config({
+    appName: "User Mang",
+    paths: {
+        bootstrap: 'vendor/bootstrap.min',
 
+        jquery: 'vendor/jquery-1.11.0.min',
+        underscore: 'vendor/underscore',
+        backbone: 'vendor/backbone',
 
-var Users = Backbone.Collection.extend({
-  url : '/users'
-});
+        text: 'vendor/text',
 
-var User = Backbone.Model.extend({
-  urlRoot : '/users',
-  idAttribute : '_id'
-});
+        templates: '../templates'
 
-var UserList = Backbone.View.extend({
-  el: '.page',
-  render: function (){
-    var that = this;
-    var users = new Users();
-    users.fetch({
-      success: function(users){
-        var template = _.template($('#user-list-template').html(), 
-                                  {users: users.models});
-                                  that.$el.html(template);
-      }
-    })
-  }
-});
-
-var EditUser = Backbone.View.extend({
-  el: '.page',
-  render : function(options){
-    var that = this; 
-    if(options._id){
-      that.user = new User({_id: options._id });
-      that.user.fetch({
-        success: function(user){
-          var template = _.template($('#edit-user-template').html(), {user: user});
-          that.$el.html(template);
+    }//,
+    /*
+    shim: {
+        backbone: {
+            deps : ["underscore", "jquery"],
+            exports : "Backbone"
+        },
+        underscore : {
+            exports : "_"
         }
-      })
-    } else {
-      var template = _.template($('#edit-user-template').html(), {user: null});
-      this.$el.html(template);
     }
-  },
-  events:{
-    'submit .edit-user-form' : 'saveUser',
-    'click .delete-user' : 'deleteUser'
-  },
-  saveUser: function(ev){
-    var userDetails = $(ev.currentTarget).serializeObject();
-    var user = new User(); 
-    user.save(userDetails, {
-      success: function(user){
-        router.navigate('', {trigger: true});
-      }
-    })
-    return false;
-  },
-  deleteUser : function(ev){
-      this.user.destroy({
-          success: function(){
-              router.navigate('', {trigger: true});
-          }
-      });
-      return false;
-  }
-});
-var Router = Backbone.Router.extend({
-  routes: {
-    '' : 'home',
-    'new' : 'editUser',
-    'edit/:id' : 'editUser'
-  }
+    */
 });
 
-var userList = new UserList();
-var editUser = new EditUser();
-
-var router = new Router();
-router.on('route:editUser', function(id){
-  editUser.render({_id: id});
+require([
+    'router/MainRouter'
+], function(MainRouter){
+    MainRouter.initialize();
 });
-router.on('route:home', function(){
-  userList.render();
-});
-
-Backbone.history.start();
