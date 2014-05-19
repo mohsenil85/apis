@@ -187,3 +187,48 @@
 2014-05-17T23:44:32.224-0700 [conn73] build index on: api.users properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "api.users" }
 2014-05-17T23:44:32.231-0700 [conn73] 	 added index to empty collection
 2014-05-17T23:44:32.231-0700 [conn73] insert api.users ninserted:1 keyUpdates:0 numYields:0 locks(micros) w:1292998 1293ms
+2014-05-18T08:00:41.027-0700 [DataFileSync] flushing mmaps took 7167774ms  for 5 files
+2014-05-18T10:01:33.032-0700 [DataFileSync] flushing mmaps took 7167460ms  for 5 files
+2014-05-18T10:18:18.168-0700 [DataFileSync] flushing mmaps took 920889ms  for 5 files
+2014-05-18T11:42:59.218-0700 [DataFileSync] flushing mmaps took 1866602ms  for 5 files
+2014-05-18T13:35:57.211-0700 [DataFileSync] flushing mmaps took 428255ms  for 5 files
+2014-05-18T16:30:06.644-0700 [conn1] dropDatabase api starting
+2014-05-18T16:30:06.681-0700 [conn1] removeJournalFiles
+2014-05-18T16:30:06.700-0700 [conn1] dropDatabase api finished
+2014-05-18T16:30:16.132-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/apis/db/mongodb/api.ns, filling with zeroes...
+2014-05-18T16:30:16.184-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/apis/db/mongodb/api.ns, size: 16MB,  took 0.051 secs
+2014-05-18T16:30:16.393-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/apis/db/mongodb/api.0, filling with zeroes...
+2014-05-18T16:30:16.979-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/apis/db/mongodb/api.0, size: 64MB,  took 0.585 secs
+2014-05-18T16:30:17.185-0700 [conn209] build index on: api.users properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "api.users" }
+2014-05-18T16:30:17.197-0700 [conn209] 	 added index to empty collection
+2014-05-18T16:30:17.198-0700 [conn209] insert api.users ninserted:1 keyUpdates:0 numYields:0 locks(micros) w:1065966 1065ms
+2014-05-18T17:28:41.165-0700 [DataFileSync] flushing mmaps took 1104035ms  for 5 files
+2014-05-18T22:03:07.003-0700 [conn1] dropDatabase api starting
+2014-05-18T22:03:07.043-0700 [conn1] removeJournalFiles
+2014-05-18T22:03:07.066-0700 [conn1] dropDatabase api finished
+2014-05-18T22:03:39.211-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/apis/db/mongodb/api.ns, filling with zeroes...
+2014-05-18T22:03:39.273-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/apis/db/mongodb/api.ns, size: 16MB,  took 0.061 secs
+2014-05-18T22:03:39.465-0700 [FileAllocator] allocating new datafile /Users/log/projects/javascript/apis/db/mongodb/api.0, filling with zeroes...
+2014-05-18T22:03:39.981-0700 [FileAllocator] done allocating datafile /Users/log/projects/javascript/apis/db/mongodb/api.0, size: 64MB,  took 0.515 secs
+2014-05-18T22:03:40.159-0700 [conn234] build index on: api.users properties: { v: 1, key: { _id: 1 }, name: "_id_", ns: "api.users" }
+2014-05-18T22:03:40.163-0700 [conn234] 	 added index to empty collection
+2014-05-18T22:03:40.164-0700 [conn234] insert api.users ninserted:1 keyUpdates:0 numYields:0 locks(micros) w:952633 952ms
+2014-05-19T04:44:52.027-0700 [DataFileSync] flushing mmaps took 3429867ms  for 5 files
+2014-05-19T08:03:13.247-0700 [signalProcessingThread] got signal 2 (Interrupt: 2), will terminate after current cmd ends
+2014-05-19T08:03:13.247-0700 [signalProcessingThread] now exiting
+2014-05-19T08:03:13.247-0700 [signalProcessingThread] dbexit: 
+2014-05-19T08:03:13.247-0700 [signalProcessingThread] shutdown: going to close listening sockets...
+2014-05-19T08:03:13.247-0700 [signalProcessingThread] closing listening socket: 9
+2014-05-19T08:03:13.247-0700 [signalProcessingThread] closing listening socket: 10
+2014-05-19T08:03:13.247-0700 [signalProcessingThread] removing socket file: /tmp/mongodb-27017.sock
+2014-05-19T08:03:13.248-0700 [signalProcessingThread] shutdown: going to flush diaglog...
+2014-05-19T08:03:13.248-0700 [signalProcessingThread] shutdown: going to close sockets...
+2014-05-19T08:03:13.248-0700 [signalProcessingThread] shutdown: waiting for fs preallocator...
+2014-05-19T08:03:13.248-0700 [signalProcessingThread] shutdown: lock for final commit...
+2014-05-19T08:03:13.248-0700 [signalProcessingThread] shutdown: final commit...
+2014-05-19T08:03:13.272-0700 [signalProcessingThread] shutdown: closing all files...
+2014-05-19T08:03:13.273-0700 [signalProcessingThread] closeAllFiles() finished
+2014-05-19T08:03:13.273-0700 [signalProcessingThread] journalCleanup...
+2014-05-19T08:03:13.273-0700 [signalProcessingThread] removeJournalFiles
+2014-05-19T08:03:13.273-0700 [signalProcessingThread] shutdown: removing fs lock...
+2014-05-19T08:03:13.275-0700 [signalProcessingThread] dbexit: really exiting now

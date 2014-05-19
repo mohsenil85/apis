@@ -13,13 +13,12 @@ mongoose.connect('mongodb://localhost/api');
 var Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-  name: {
+  email: {
     type: String,
     required: true,
     trim: true
-  }
-/*
-  email: {
+  },
+  firstName: {
     type: String,
     required: true,
     trim: true
@@ -37,14 +36,15 @@ var UserSchema = new Schema({
      type: Date,
      default: Date.now 
    }
-*/
 });
 
 var User = mongoose.model('User', UserSchema);
 
+app.use(express.static(__dirname + '/public'));
 
 router.use(function(req, res, next){
   console.log(req.method + " :  " + req.url);
+  console.log(req.body);
   next();
 });
 
@@ -55,11 +55,15 @@ app.get('/', function(req, res){
 router.route('/users')
   .post(function(req, res){
     var user = new User({
-      name : req.body.name
+      email : req.body.email,
+      firstName : req.body.firstName,
+      lastName : req.body.lastName,
+      age : req.body.age,
+      date : req.body.date
     });
     user.save(function(err){
       if (err) res.send(err);
-      res.json({ message: 'user created' });
+      res.json({ message: 'User created' });
     });
   })
   .get(function(req, res){
@@ -77,9 +81,14 @@ router.route('/users/:user_id')
     });
   })
   .put(function(req, res){
+    console.log(req.params);
     User.findById(req.params.user_id, function(err, user){
       if (err) res.send(err);
-      user.name = req.body.name;
+      user.firstName = req.body.firstName;
+      user.lastName = req.body.lastName;
+      user.email = req.body.email;
+      user.age = req.body.age;
+      user._id = req.body._id;
       user.save(function(err){
         if (err) res.send(err);
         res.json({message: 'User updated'});
@@ -96,6 +105,5 @@ router.route('/users/:user_id')
   });
     
 
-
-app.use('/api', router);
+app.use('/', router);
 app.listen(port);
