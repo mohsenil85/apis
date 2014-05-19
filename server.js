@@ -41,7 +41,8 @@ var UserSchema = new Schema({
 var User = mongoose.model('User', UserSchema);
 
 app.use(express.static(__dirname + '/public'));
-
+app.use(express.favicon(path.join(__dirname, 'public/images/favicon.ico'))); 
+ 
 router.use(function(req, res, next){
   console.log(req.method + " :  " + req.url);
   console.log(req.body);
