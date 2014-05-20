@@ -1,5 +1,6 @@
 *.swp
 node_modules/*
-db/
+db/mongodb/
+db/mongodb.log
 public/bower_components
 
