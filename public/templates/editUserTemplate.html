@@ -1,5 +1,5 @@
 <script  id='edit-user-template' type='text/template'>
-  <form role='form' class='edit-user-form container  col-md-8 form-horizontal'>
+  <form role='form' class='edit-user-form container  col-md-4 form-horizontal'>
     <legend><%= user ? 'Update' : 'Create' %> User </legend>
     <div class='form-group'>
       <lable>First Name</lable>
@@ -23,7 +23,7 @@
     <button type="submit" class="btn"> <%= user ? 'Update' : 'Create' %> </button>
     <% if (user) { %>
       <input type="hidden" name="_id" value="<%= user.attributes._id %>" />
-    <button type= "button" class="btn btn-danger delete-user">Delete</button>
+    <button type= "button" class="btn btn-danger delete-user pull-right">Delete</button>
     <% }; %>
   </form>
 </script>
