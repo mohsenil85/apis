@@ -3,9 +3,8 @@ define([
     'underscore',
     'backbone',
     'models/userModel',
-    'text!../templates/editUserTemplate.html',
-    'router/MainRouter'
-], function ($, _, Backbone,  UserModel,  editUserTemplate, MainRouter){
+    'text!../templates/editUserTemplate.html'
+], function ($, _, Backbone,  UserModel,  editUserTemplate ){
     var EditUserView = Backbone.View.extend({
         el: '.page',
 
@@ -35,9 +34,15 @@ define([
             var user = new UserModel(); 
             user.save(userDetails, {
                 success: function(user){
-              window.location.href = '/';
-//                    $('#home').click();
-        //            router.navigate('', {trigger: true});
+                   var MainRouter = null; 
+                    console.log(MainRouter);
+                    if(!MainRouter){
+                        console.log('this');
+                        var MainRouter = require("router/MainRouter");
+                        console.log(MainRouter);
+                        var router = new MainRouter();
+                        router.navigate('', {trigger: true});
+                    }
                 }
             })
             return false;
@@ -46,10 +51,11 @@ define([
         deleteUser : function(ev){
             this.user.destroy({
                 success: function(){
-                    console.log('ha');
-              window.location.href = '/';
-                    $('#home').click();
-                    //router.navigate('', {trigger: true});
+                    if(!MainRouter){
+                        MainRouter = require("router/MainRouter");
+                        router = new MainRouter();
+                        MainRouter.navigate('', {trigger: true});
+                    }
                 }
             });
             return false;

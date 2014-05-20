@@ -32,7 +32,6 @@ define([
             return o;
         };
         var router = new MainRouter();
-      if (U)
         var userList = new UserListView();
         var editUser = new EditUserView();
 
