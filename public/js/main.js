@@ -1,13 +1,13 @@
 require.config({
     appName: "User Mang",
     paths: {
-        bootstrap: 'vendor/bootstrap.min',
+        bootstrap: '../bower_components/bootstrap/dist/js/bootstrap.min',
 
-        jquery: 'vendor/jquery-1.11.0.min',
-        underscore: 'vendor/underscore',
-        backbone: 'vendor/backbone',
+        jquery: '../bower_components/jquery/dist/jquery.min',
+        underscore: '../bower_components/lodash/dist/lodash.min',
+        backbone: '../bower_components/backbone/backbone',
 
-        text: 'vendor/text',
+        text: '../bower_components/requirejs-text/text',
 
         templates: '../templates'
 

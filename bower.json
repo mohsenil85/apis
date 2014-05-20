@@ -1,0 +1,31 @@
+{
+  "name": "apis",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mohsenil85/apis",
+  "authors": [
+    "mohsenil85 <mohsenil85@gmail.com>"
+  ],
+  "main": "public/index.html",
+  "moduleType": [
+    "amd"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "backbone": "~1.1.2",
+    "bootstrap-css": "~3.1.1",
+    "bootstrap": "~3.1.1",
+    "modernizr": "~2.8.2",
+    "requirejs": "~2.1.11",
+    "lodash": "~2.4.1",
+    "requirejs-text": "~2.0.12",
+    "flat-ui-official": "~2.1.3"
+  }
+}
