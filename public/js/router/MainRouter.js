@@ -6,7 +6,7 @@ define([
     'views/userListView',
     'views/editUserView'
 
-], function ($, _, Backbone,  UsersCollection,  UserListView, EditUserView){
+], function ($, _, Backbone,  UsersCollection,  UserListView, EditUserView ){
     var MainRouter = Backbone.Router.extend({
         routes: {
             '' : 'home',
@@ -16,29 +16,14 @@ define([
     });
     var initialize = function(){
 
-        $.fn.serializeObject = function() {
-            var o = {};
-            var a = this.serializeArray();
-            $.each(a, function() {
-                if (o[this.name] !== undefined) {
-                    if (!o[this.name].push) {
-                        o[this.name] = [o[this.name]];
-                    }
-                    o[this.name].push(this.value || '');
-                } else {
-                    o[this.name] = this.value || '';
-                }
-            });
-            return o;
-        };
         var router = new MainRouter();
-        var userList = new UserListView();
-        var editUser = new EditUserView();
 
         router.on('route:editUser', function(id){
-            editUser.render({_id: id});
+            var editUserView = new EditUserView();
+            editUserView.render({_id: id});
         });
         router.on('route:home', function(){
+            var userList = new UserListView();
             userList.render();
         });
 

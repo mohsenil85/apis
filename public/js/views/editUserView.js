@@ -1,10 +1,12 @@
 define([
+    'require',
     'jquery',
     'underscore',
     'backbone',
     'models/userModel',
-    'text!../templates/editUserTemplate.html'
-], function ($, _, Backbone,  UserModel,  editUserTemplate ){
+    'text!../templates/editUserTemplate.html',
+    'common/serializeObject'
+], function (require, $, _, Backbone,  UserModel,  editUserTemplate, serializeObject  ){
     var EditUserView = Backbone.View.extend({
         el: '.page',
 
@@ -30,32 +32,22 @@ define([
         },
 
         saveUser: function(ev){
+            var that = this;
             var userDetails = $(ev.currentTarget).serializeObject();
             var user = new UserModel(); 
             user.save(userDetails, {
                 success: function(user){
-                   var MainRouter = null; 
-                    console.log(MainRouter);
-                    if(!MainRouter){
-                        console.log('this');
-                        var MainRouter = require("router/MainRouter");
-                        console.log(MainRouter);
-                        var router = new MainRouter();
-                        router.navigate('', {trigger: true});
-                    }
+                    console.log(user);
                 }
             })
             return false;
         },
 
         deleteUser : function(ev){
+            var that = this;
             this.user.destroy({
                 success: function(){
-                    if(!MainRouter){
-                        MainRouter = require("router/MainRouter");
-                        router = new MainRouter();
-                        MainRouter.navigate('', {trigger: true});
-                    }
+                    that.render();
                 }
             });
             return false;

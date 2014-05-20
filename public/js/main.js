@@ -1,5 +1,14 @@
+//bootstrap for app
 require.config({
-    appName: "User Mang",
+    shim: {
+        'backbone' : {
+            deps: ['underscore', 'jquery'],
+            exports: 'Backbone'
+        },
+        'underscore': {
+            exports: '_'
+        }
+    },
     paths: {
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap.min',
 
@@ -15,7 +24,7 @@ require.config({
 });
 
 require([
-    'router/MainRouter'
-], function(MainRouter){
-    MainRouter.initialize();
+    'app'
+], function(App){
+    App.initialize();
 });
