@@ -3,7 +3,7 @@ define([
     'backbone'
 ], function ( _, Backbone){
         var UserModel = Backbone.Model.extend({
-            urlRoot : '/users',
+            urlRoot : '/api/users',
             idAttribute : '_id'
         });
     return UserModel;

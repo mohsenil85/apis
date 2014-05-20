@@ -105,5 +105,5 @@ router.route('/users/:user_id')
   });
     
 
-app.use('/', router);
+app.use('/api', router);
 app.listen(port);
