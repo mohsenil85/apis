@@ -17,18 +17,19 @@ define([
     var initialize = function(){
 
         var router = new MainRouter();
+        var userList = new UserListView();
 
+        var editUserView = new EditUserView({
+            router: router
+        });
         router.on('route:editUser', function(id){
-            var editUserView = new EditUserView();
-            editUserView.render({_id: id});
+            editUserView.render({id: id});
         });
         router.on('route:home', function(){
-            var userList = new UserListView();
             userList.render();
         });
 
         Backbone.history.start();
-
     };
     return {
         initialize: initialize

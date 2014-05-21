@@ -48,10 +48,12 @@ router.use(function(req, res, next){
   next();
 });
 
+/*
 app.get('/', function(req, res){
   res.json({message: 'testing'});
 });
 
+*/
 router.route('/users')
   .post(function(req, res){
     var user = new User({

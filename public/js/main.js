@@ -1,5 +1,6 @@
 //bootstrap for app
 require.config({
+    /*
     shim: {
         'backbone' : {
             deps: ['underscore', 'jquery'],
@@ -9,16 +10,19 @@ require.config({
             exports: '_'
         }
     },
+    */
     paths: {
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap.min',
 
         jquery: '../bower_components/jquery/dist/jquery.min',
-        underscore: '../bower_components/lodash/dist/lodash.min',
+        underscore: '../bower_components/underscore/underscore',
         backbone: '../bower_components/backbone/backbone',
 
+        serializeObject: '../bower_components/jquery-serialize-object/jquery.serialize-object.min',
         text: '../bower_components/requirejs-text/text',
 
         templates: '../templates'
+
 
     }
 });

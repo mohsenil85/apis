@@ -23,7 +23,6 @@
     <button type="submit" class="btn"> <%= user ? 'Update' : 'Create' %> </button>
     <% if (user) { %>
       <input type="hidden" name="_id" value="<%= user.attributes._id %>" />
-    <%console.log(user); %>
     <button type= "button" class="btn btn-danger delete-user pull-right">Delete</button>
     <% }; %>
   </form>
