@@ -9,7 +9,6 @@
         <th>First Name</th>
         <th>Last Name</th>
         <th></th>
-        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -18,8 +17,12 @@
           <td><%= user.get('userName') %> </td>
           <td><%= user.get('firstName') %> </td>
           <td><%= user.get('lastName') %> </td>
-          <td><a href='#/view/<%= user.attributes._id %>' class='btn btn-default'>View</td>
-          <td><a href='#/edit/<%= user.attributes._id %>' class='btn btn-default btn-info'>Edit</td>
+          <td>
+          <div class='btn-group'>
+          <a href='#/view/<%= user.attributes._id %>' class='btn btn-default'>View</a>
+          <a href='#/edit/<%= user.attributes._id %>' class='btn btn-default btn-info'>Edit</a>
+          </div>
+          </td>
         </tr>
 
      <% }); %>

@@ -25,11 +25,13 @@
     </div>
     <hr />
 
+    <div class="btn-group">
     <button type="submit" class="btn"> <%= user ? 'Update' : 'Create' %> </button>
     <% if (user) { %>
       <input type="hidden" name="id" value="<%= user.attributes.id %>" />
     <%console.log(user); %>
     <button type= "button" class="btn btn-danger delete-user pull-right">Delete</button>
     <% }; %>
+    </div>
   </form>
 </script>

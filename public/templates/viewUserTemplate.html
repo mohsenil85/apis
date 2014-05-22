@@ -10,13 +10,17 @@
     <h4><%=user.get('age')   %> </h4>
     <h4><%=user.get('email')   %> </h4>
     <h4><%=user.get('id')   %> </h4>
-    <button type= "button" class="btn edit-user-button ">Edit</button>
+    <button type= "button" class="btn btn-info edit-user-button ">Edit</button>
 
-    <% } else { %>
+<!--
+//    <% } else { %>
+    -->
     <p class="bg-warning"> that user does not exist </p>
     <% };  %>
     <hr />
+    <div class="btn-group">
     <button type= "button" class="btn view-users ">View Users</button>
     <button type= "button" class="btn new-user ">Create User</button>
+    </div>
   </div>
 </script>

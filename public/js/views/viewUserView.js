@@ -1,4 +1,3 @@
-
 define([
     'require',
     'jquery',
@@ -22,6 +21,11 @@ define([
                     success: function(user){
                         var template = _.template($(ViewUserTemplate).html(), 
                                                   {user: user});
+                        that.$el.html(template);
+                    },
+                    error : function(){
+                        var template = _.template($(ViewUserTemplate).html(), 
+                                                  {user: null});
                         that.$el.html(template);
                     }
                 })
