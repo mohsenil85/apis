@@ -69,16 +69,17 @@ router.route('/users')
     });
   });
 
-router.route('/users/:user_id')
+router.route('/users/:id')
   .get(function(req, res){
-    User.findById(req.params.user_id, function(err, user){
+    console.log(req.params.id);
+    User.findById(req.params.id, function(err, user){
       if (err) res.send(err);
       res.json(user);
     });
   })
   .put(function(req, res){
     console.log(req.params);
-    var id = new mongoose.Types.ObjectId(req.body.id);
+    var id = new mongoose.Types.ObjectId(req.params.id);
     User.findById(id, function(err, user){
       if (err) res.send(err);
       user.firstName = req.body.firstName;
@@ -94,7 +95,7 @@ router.route('/users/:user_id')
   })
   .delete(function(req, res){
     User.remove({
-      _id : req.params.user_id
+      _id : req.params.id
     }, function(err, user){
       if (err) res.send(err);
       res.json({message: 'User deleted'});
