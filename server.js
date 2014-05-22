@@ -48,12 +48,6 @@ router.use(function(req, res, next){
   next();
 });
 
-/*
-app.get('/', function(req, res){
-  res.json({message: 'testing'});
-});
-
-*/
 router.route('/users')
   .post(function(req, res){
     var user = new User({
@@ -84,13 +78,14 @@ router.route('/users/:user_id')
   })
   .put(function(req, res){
     console.log(req.params);
-    User.findById(req.params.user_id, function(err, user){
+    var id = new mongoose.Types.ObjectId(req.body.id);
+    User.findById(id, function(err, user){
       if (err) res.send(err);
       user.firstName = req.body.firstName;
       user.lastName = req.body.lastName;
       user.email = req.body.email;
       user.age = req.body.age;
-      user._id = req.body._id;
+      user._id = id;
       user.save(function(err){
         if (err) res.send(err);
         res.json({message: 'User updated'});
