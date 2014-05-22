@@ -19,7 +19,8 @@ define([
                 that.user = new UserModel({id: options.id });
                 that.user.fetch({
                     success: function(user){
-                        var template = _.template($(editUserTemplate).html(), {user: user});
+                        var template = _.template($(editUserTemplate).html(), 
+                                                  {user: user});
                         that.$el.html(template);
                     }
                 })

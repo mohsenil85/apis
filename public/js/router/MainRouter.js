@@ -24,7 +24,9 @@ define([
         var editUserView = new EditUserView({
             router: router
         });
-        var homePageView = new HomePageView();
+        var homePageView = new HomePageView({
+            router: router
+        });
 
         router.on('route:editUser', function(id){
             editUserView.render({id: id});
