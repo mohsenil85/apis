@@ -30,7 +30,9 @@ define([
             router: router
         });
 
-        var viewUserView = new ViewUserView();
+        var viewUserView = new ViewUserView({
+            router: router
+        });
 
         router.on('route:editUser', function(id){
             editUserView.render({id: id});

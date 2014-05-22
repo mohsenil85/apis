@@ -16,6 +16,7 @@ define([
         render : function(options){
             var that = this; 
             if(options.id){
+                console.log(options);
                 that.user = new UserModel({id: options.id });
                 that.user.fetch({
                     success: function(user){
@@ -39,14 +40,12 @@ define([
             
             var that = this;
             var userDetails = $(ev.currentTarget).serializeObject();
-            console.log(userDetails);
             var user = new UserModel(); 
             user.save(userDetails, {
                 success: function(){
-                    that.options.router.navigate('/userlist', {trigger: true});
+                    that.options.router.navigate('', {trigger: true});
                 }
             });
-            console.log(user);
             return false;
         },
 
@@ -54,7 +53,7 @@ define([
             var that = this;
             this.user.destroy({
                 success: function(){
-                    that.options.router.navigate('/userlist', {trigger: true});
+                    that.options.router.navigate('', {trigger: true});
                 }
             });
             return false;

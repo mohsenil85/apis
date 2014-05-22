@@ -1,13 +1,22 @@
-<script  id='user-list-template' type='text/template'>
-<div class=container>
-<% if (user) { %>
-<h4>Welcome to the profile page</h4>
-<p>You are viewing the profile of <%= user.get('userName') %> </p>
+<script  id='user-view-template' type='text/template'>
+  <div class=container>
+    <% if (user) { %>
+    <h4>Welcome to the profile page</h4>
+    <p>You are viewing the profile of <%= user.get('userName') %> </p>
+    <% console.log(user) %>
+    <% console.log(user.attributes.firstName) %>
+    <hr />
+    <h1><%=user.get('firstName')  %> <%=user.get('lastName')  %> </h1>
+    <h4><%=user.get('age')   %> </h4>
+    <h4><%=user.get('email')   %> </h4>
+    <h4><%=user.get('id')   %> </h4>
+    <button type= "button" class="btn edit-user-form ">Edit</button>
+
+    <% } else { %>
+    <p class="bg-warning"> that user does not exist </p>
+    <% };  %>
+    <hr />
     <button type= "button" class="btn view-users ">View Users</button>
     <button type= "button" class="btn new-user ">Create User</button>
-
-<% } else { %>
-<p> that user does not exist </p>
-<% };  %>
-</div>
+  </div>
 </script>
