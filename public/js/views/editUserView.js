@@ -42,7 +42,7 @@ define([
             var user = new UserModel(); 
             user.save(userDetails, {
                 success: function(){
-                    that.options.router.navigate('', {trigger: true});
+                    that.options.router.navigate('/userlist', {trigger: true});
                 }
             });
             console.log(user);
@@ -53,7 +53,7 @@ define([
             var that = this;
             this.user.destroy({
                 success: function(){
-                    that.options.router.navigate('', {trigger: true});
+                    that.options.router.navigate('/userlist', {trigger: true});
                 }
             });
             return false;
