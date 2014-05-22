@@ -35,6 +35,11 @@ var UserSchema = new Schema({
    date: { 
      type: Date,
      default: Date.now 
+   },
+   userName:{
+    type: String,
+    required: true,
+    trim: true
    }
 });
 
@@ -55,7 +60,8 @@ router.route('/users')
       firstName : req.body.firstName,
       lastName : req.body.lastName,
       age : req.body.age,
-      date : req.body.date
+      date : req.body.date,
+      userName: req.body.userName
     });
     user.save(function(err){
       if (err) res.send(err);
@@ -87,6 +93,7 @@ router.route('/users/:id')
       user.email = req.body.email;
       user.age = req.body.age;
       user._id = id;
+      user.userName = req.body.userName;
       user.save(function(err){
         if (err) res.send(err);
         res.json({message: 'User updated'});
@@ -102,6 +109,7 @@ router.route('/users/:id')
     });
   });
     
+router.route('')
 
 app.use('/api', router);
 app.listen(port);

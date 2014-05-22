@@ -2,6 +2,11 @@
   <form role='form' class='edit-user-form container  col-md-4 form-horizontal'>
     <legend><%= user ? 'Update' : 'Create' %> User </legend>
     <div class='form-group'>
+      <lable>User Name</lable>
+      <input type="text" name="userName" class="form-control" 
+      value="<%= user ? user.get('userName') : '' %>" />
+    </div>
+    <div class='form-group'>
       <lable>First Name</lable>
       <input type="text" name="firstName" class="form-control" 
       value="<%= user ? user.get('firstName') : '' %>" />
