@@ -17,7 +17,6 @@ define([
         render : function(options){
             var that = this; 
             if(options.id){
-                console.log(options);
                 that.user = new UserModel({id: options.id });
                 that.user.fetch({
                     success: function(user){
@@ -34,22 +33,15 @@ define([
         },
 
         events:{
-            'click .edit-user-form' : 'saveUser',
+            'click .edit-user-button' : 'editUser',
             'click .delete-user' : 'deleteUser'
         },
 
-        saveUser: function(ev, user){
-            
-            var that = this;
-            var userDetails = $(ev.currentTarget).serializeObject();
-            console.log(userDetails);
-            var user = new UserModel(); 
-            user.save(userDetails, {
-                success: function(){
-                    that.options.router.navigate('', {trigger: true});
-                }
-            });
-            console.log(user);
+        editUser: function(ev){
+            console.log('DEBUG');
+            console.log(this.user.get('id'));
+            var id = this.user.get('id');
+            this.options.router.navigate('#/edit/' + id, {trigger: true});
             return false;
         }
         /*

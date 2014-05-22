@@ -37,6 +37,7 @@ define([
         },
 
         saveUser: function(ev){
+            console.log('this');
             
             var that = this;
             var userDetails = $(ev.currentTarget).serializeObject();
