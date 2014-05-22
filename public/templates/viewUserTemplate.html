@@ -1,0 +1,13 @@
+<script  id='user-list-template' type='text/template'>
+<div class=container>
+<% if (user) { %>
+<h4>Welcome to the profile page</h4>
+<p>You are viewing the profile of <%= user.get('userName') %> </p>
+    <button type= "button" class="btn view-users ">View Users</button>
+    <button type= "button" class="btn new-user ">Create User</button>
+
+<% } else { %>
+<p> that user does not exist </p>
+<% };  %>
+</div>
+</script>

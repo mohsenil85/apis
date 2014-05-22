@@ -5,15 +5,17 @@ define([
     'collections/usersCollection',
     'views/userListView',
     'views/editUserView',
-    'views/homePageView'
+    'views/homePageView',
+    'views/viewUserView'
 
-], function ($, _, Backbone,  UsersCollection,  UserListView, EditUserView, HomePageView ){
+], function ($, _, Backbone,  UsersCollection,  UserListView, EditUserView, HomePageView, ViewUserView ){
     var MainRouter = Backbone.Router.extend({
         routes: {
             '' : 'home',
             'userlist' : 'userList',
             'new' : 'editUser',
-            'edit/:id' : 'editUser'
+            'edit/:id' : 'editUser',
+            'view/:id' : 'viewUser'
         }
     });
     var initialize = function(){
@@ -28,6 +30,8 @@ define([
             router: router
         });
 
+        var viewUserView = new ViewUserView();
+
         router.on('route:editUser', function(id){
             editUserView.render({id: id});
         });
@@ -37,6 +41,10 @@ define([
 
         router.on('route:home', function(){
           homePageView.render();
+        })
+
+        router.on('route:viewUser', function(id){
+          viewUserView.render({id: id});
         })
 
         Backbone.history.start();
