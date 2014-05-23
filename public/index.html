@@ -11,8 +11,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="stylesheet" href="bower_components/bootstrap-css/css/bootstrap.min.css">
-        <link rel="stylesheet" href="bower_components/flat-ui-official/css/flat-ui.css">
+        <!--<link rel="stylesheet" href="bower_components/flat-ui-official/css/flat-ui.css"> 
         <link rel="stylesheet" href="css/main.css">
+-->
         <script src="bower_components/modernizr/modernizr.js"></script>
 
         <script data-main="js/main" src="bower_components/requirejs/require.js"></script>
@@ -22,10 +23,13 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <div class="container">
-        <div class="header"></div>
-        <div class="page"></div>
-        <div class="footer"></div>
+        <div class="outside container container-narrow">
+          <div class="container">
+              <div class="header"></div>
+              <div class="page container container-narrow "></div>
+              <!--<div class="push"></div> -->
+            <div class="footer container"></div>
+          </div>
         </div>
     </body>
 </html>

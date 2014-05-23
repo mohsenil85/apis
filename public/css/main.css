@@ -2,18 +2,49 @@
 Author's custom styles
 ========================================================================== */
 @import url("bootstrap.min.css")
-@import url("flat-ui.css")
 
-body {
-  padding-top: 50px;
-  padding-bottom: 20px;
+
+/*
+.outside {
   background-image : url('../img/evening.jpg');
 }
 
-* {
-  color: #2980b9;
+*/
+*{
+  color : black;
+/*  margin: 0; */
 }
 
+html, body{
+height: 100%;
+}
+/*
+
+.wrapper {
+  min-height:100%;
+  min-height: auto !important;
+  height: 100%;
+  margin 0 auto -4em;
+}
+
+
+.footer, .push {
+  height: 4em;
+}
+
+form {
+  height: 100%
+}
+
+*/
+*{
+  background-image : url('../img/evening.jpg') no-repeat center center fixed;
+  -moz-backgound-size: cover;
+  background-size:cover;
+  
+}
+
+/*
 .btn {
 background-color :#7f8c8d;
 }
@@ -23,27 +54,25 @@ a.focus{
   background-color: #f1c40f;
 }
 
+.navbar-inverse > *:hover{
+  color: #f1c40f;
+}
 .navbar-inverse .navbar-nav > li > a:hover{
   color: #f1c40f;
 }
 
-a.navbar-brand:hover{
+*:hover{
   color: #f1c40f;
 }
 
+*/
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
 
+.page{
+  padding-left : 51px; !important 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
