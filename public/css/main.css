@@ -10,6 +10,27 @@ body {
   background-image : url('../img/evening.jpg');
 }
 
+* {
+  color: #2980b9;
+}
+
+.btn {
+background-color :#7f8c8d;
+}
+
+a.focus{
+  color: #f1c40f;
+  background-color: #f1c40f;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover{
+  color: #f1c40f;
+}
+
+a.navbar-brand:hover{
+  color: #f1c40f;
+}
+
 
 
 
