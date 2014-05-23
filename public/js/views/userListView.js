@@ -1,11 +1,13 @@
-define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'text!../templates/userListTemplate.html',
-    'collections/usersCollection'
+define(function(require){
 
-], function ($, _, Backbone, userListTemplate, UsersCollection ){
+  "use strict";
+
+    var $             = require('jquery'),
+    _                 = require('underscore'),
+    Backbone          = require('backbone'),
+    userListTemplate  = require( 'text!../templates/userListTemplate.html'),
+    UsersCollection   = require('collections/usersCollection')
+
     var UserListView = Backbone.View.extend({
         el: '.page',
         render: function (){

@@ -20,6 +20,7 @@ require.config({
 
         serializeObject: '../bower_components/jquery-serialize-object/jquery.serialize-object.min',
         text: '../bower_components/requirejs-text/text',
+        json2: '../bower_components/json2/json2',
 
         templates: '../templates'
 

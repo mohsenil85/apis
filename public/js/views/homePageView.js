@@ -1,10 +1,12 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'text!../templates/homePageTemplate.html'
+define(function(require){
 
-], function ($, _, Backbone, homePage){
+  "use strict";
+
+  var $     = require('jquery'),
+  _         = require('underscore'),
+  Backbone  = require( 'backbone'),
+  homePage  = require('text!../templates/homePageTemplate.html')
+
   var HomePageView = Backbone.View.extend({
     el: '.page',
 

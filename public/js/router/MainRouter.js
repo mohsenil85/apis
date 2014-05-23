@@ -1,14 +1,16 @@
-define([
-    'jquery',
-    'underscore',
-    'backbone',
-    'collections/usersCollection',
-    'views/userListView',
-    'views/editUserView',
-    'views/homePageView',
-    'views/viewUserView'
+define(function(require){
 
-], function ($, _, Backbone,  UsersCollection,  UserListView, EditUserView, HomePageView, ViewUserView ){
+  "use strict";
+
+    var $                 = require('jquery'),
+        _                 = require('underscore'),
+        Backbone          = require('backbone'),
+        UsersCollection   = require('collections/usersCollection'),
+        UserListView      = require('views/userListView'),
+        EditUserView      = require( 'views/editUserView'),
+        HomePageView      = require('views/homePageView'),
+        ViewUserView      = require('views/viewUserView')
+
     var MainRouter = Backbone.Router.extend({
         routes: {
             '' : 'home',

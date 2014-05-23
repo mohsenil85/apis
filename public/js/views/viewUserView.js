@@ -1,12 +1,14 @@
-define([
-    'require',
-    'jquery',
-    'underscore',
-    'backbone',
-    'models/userModel',
-    'text!../templates/viewUserTemplate.html',
-    'serializeObject' 
-], function (require, $, _, Backbone,  UserModel,  ViewUserTemplate, serializeObject){
+define(function(require){
+
+  "use strict";
+
+    var $             = require('jquery'),
+    _                 = require('underscore'),
+    Backbone          = require('backbone'),
+    UserModel         = require( 'models/userModel'),
+    ViewUserTemplate  = require('text!../templates/viewUserTemplate.html'),
+    serializeObject   = require('serializeObject' )
+
     var ViewUserView = Backbone.View.extend({
          initialize : function(options){
             this.options = options || {};
