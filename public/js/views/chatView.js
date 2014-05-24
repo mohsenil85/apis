@@ -8,6 +8,7 @@ define(function(require){
   ChatTemplate      = require('text!../templates/chatTemplate.html'),
   UserModel         = require('models/userModel'),
   cookie            = require('cookie'),
+  ChatModel         = require('models/chatModel'),
   serializeObject   = require ('serializeObject' )
 
   var ChatView = Backbone.View.extend({
@@ -42,6 +43,7 @@ define(function(require){
     },
 
     sendChat: function(ev){
+      var chat = new ChatModel();
       console.log('chatting....');
 
     }

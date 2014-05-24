@@ -2,6 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
+var io = require('socket.io');
 
 var app = express();
 var router = express.Router();
@@ -136,6 +137,15 @@ router.route('/auth/:userName')
     });
   });
 
-
 app.use('/api', router);
-app.listen(port);
+//app.listen(port);
+
+var io = io.listen(app.listen(port));
+
+io.sockets.on('connection', function(socket){
+  socket.emit('message', {message: 'welcome to chat'});
+  socket.on('send', function(data){
+    io.sockets.emit('message', data)
+  });
+});
+
