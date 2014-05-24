@@ -5,8 +5,8 @@ define(function(require){
   var $             = require('jquery'),
   _                 = require('underscore'),
   Backbone          = require( 'backbone'),
-  AuthModel         = require('models/authModel'),
   ChatTemplate      = require('text!../templates/chatTemplate.html'),
+  UserModel         = require('models/userModel'),
   cookie            = require('cookie'),
   serializeObject   = require ('serializeObject' )
 
@@ -21,13 +21,29 @@ define(function(require){
     },
 
     render : function(options){
-      var template = _.template($(ChatTemplate).html());
-      this.$el.html(template);
+      console.log(this);
+      var that = this; 
+      var signedIn = this.options.auth.get('loggedIn');
+
+      if(signedIn){
+        that.user = new UserModel({id: this.options.auth.get('id') });
+        that.user.fetch({
+          success: function(user){
+            var template = _.template($(ChatTemplate).html(),
+                                      {user: user});
+                                      that.$el.html(template);
+          },
+          error : function(){
+            console.log('auth failed');
+            Backbone.history.navigate('', {trigger: true});
+          }
+        })
+      } 
     },
 
     sendChat: function(ev){
       console.log('chatting....');
-      
+
     }
 
   });

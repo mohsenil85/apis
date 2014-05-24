@@ -1,7 +1,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-//var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser');
 
 var app = express();
 var router = express.Router();
@@ -9,7 +9,7 @@ var router = express.Router();
 var port = 7000;
 
 app.use(bodyParser());
-//app.use(cookieParser());
+app.use(cookieParser());
 
 mongoose.connect('mongodb://localhost/api');
 var Schema = mongoose.Schema;
@@ -127,8 +127,8 @@ router.route('/auth/:userName')
         var editPath = '/#/edit/' + user.id + '/';
         console.log(editPath);
         res.clearCookie('id')
-        res.cookie('id', user.id, { path: editPath});
-        //res.cookie('id', user.id)
+        //res.cookie('id', user.id, { path: editPath, httpOnly: false});
+        res.cookie('id', user.id)
         res.send(200)
       } else {
         res.send(401)

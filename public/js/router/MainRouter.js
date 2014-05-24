@@ -60,8 +60,8 @@ define(function(require){
         auth: auth
     });
 
-    router.on('route:userChat', function(){
-      chatView.render();
+    router.on('route:userChat', function(id){
+      chatView.render({id: id});
     });
 
     router.on('route:authUser', function(){
