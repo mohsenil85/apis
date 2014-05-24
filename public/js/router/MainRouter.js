@@ -12,6 +12,7 @@ define(function(require){
   HeaderView        = require('views/headerView'),
   FooterView        = require('views/footerView'),
   SignInView        = require('views/signInView'),
+  ChatView          = require('views/chatView'),
   ViewUserView      = require('views/viewUserView')
 
   var MainRouter = Backbone.Router.extend({
@@ -21,6 +22,7 @@ define(function(require){
       'new' : 'editUser',
       'edit/:id' : 'editUser',
       'auth' : 'authUser',
+      'chat' : 'userChat',
       'view/:id' : 'viewUser'
     }
   });
@@ -47,6 +49,11 @@ define(function(require){
     });
 
     var signInView = new SignInView();
+    var chatView = new ChatView();
+
+    router.on('route:userChat', function(){
+      chatView.render();
+    });
 
     router.on('route:authUser', function(){
       signInView.render();
