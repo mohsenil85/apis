@@ -41,7 +41,8 @@ define(function(require){
     },
     handleCookies: function(status){
       if (status === 401){
-        console.log('err');
+        Backbone.history.navigate('', {trigger: true})
+        //console.log('err');
         return false;
       };
       if (status === 200){
