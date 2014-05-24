@@ -41,10 +41,8 @@ var UserSchema = new Schema({
     required: true,
     trim: true
    },
-   password:{
-    type: String,
-    required: true,
-
+   password : {
+     type: String
    }
 });
 
@@ -116,7 +114,22 @@ router.route('/users/:id')
     });
   });
     
-router.route('')
+router.route('/auth/:userName')
+  .post(function(req, res){
+    User.findOne({
+      userName: req.body.userName, 
+      password: req.body.password
+    }, function(err, user){
+      if(user){
+        console.log(user.userName);
+        res.cookie('user', user.userName,{}  )
+        res.send(200)
+      } else {
+        res.send(401)
+      }
+    });
+  });
+
 
 app.use('/api', router);
 app.listen(port);

@@ -24,6 +24,10 @@
         <lable>Email</lable>
         <input type="email" name="email" class="form-control" value="<%= user ? user.get('email') : '' %>" />
       </div>
+       <div class='form-group'>
+        <lable>Pass</lable>
+        <input type="text" name="password" class="form-control" value="<%= user ? user.get('password') : '' %>" />
+      </div>
       <hr />
 
       <div class="btn-group">

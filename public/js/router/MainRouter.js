@@ -11,6 +11,7 @@ define(function(require){
   HomePageView      = require('views/homePageView'),
   HeaderView        = require('views/headerView'),
   FooterView        = require('views/footerView'),
+  SignInView        = require('views/signInView'),
   ViewUserView      = require('views/viewUserView')
 
   var MainRouter = Backbone.Router.extend({
@@ -19,6 +20,7 @@ define(function(require){
       'userlist' : 'userList',
       'new' : 'editUser',
       'edit/:id' : 'editUser',
+      'auth' : 'authUser',
       'view/:id' : 'viewUser'
     }
   });
@@ -42,6 +44,12 @@ define(function(require){
 
     var viewUserView = new ViewUserView({
       router: router
+    });
+
+    var signInView = new SignInView();
+
+    router.on('route:authUser', function(){
+      signInView.render();
     });
 
     router.on('route:editUser', function(id){
