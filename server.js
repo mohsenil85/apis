@@ -121,8 +121,10 @@ router.route('/auth/:userName')
       password: req.body.password
     }, function(err, user){
       if(user){
-        console.log(user.userName);
-        res.cookie('user', user.userName,{}  )
+        
+        //res.cookie('user', user.userName,{}  )
+        res.clearCookie('id')
+        res.cookie('id', user._id)
         res.send(200)
       } else {
         res.send(401)

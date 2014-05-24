@@ -46,6 +46,7 @@ define(function(require){
       };
       if (status === 200){
         console.log($.cookie('user'));
+        console.log($.cookie('id'));
         console.log('success');
       };
       
