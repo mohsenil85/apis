@@ -6,6 +6,7 @@ define(function(require){
   _                 = require('underscore'),
   Backbone          = require('backbone'),
   UsersCollection   = require('collections/usersCollection'),
+  AuthModel         = require('models/authModel'),
   UserListView      = require('views/userListView'),
   EditUserView      = require( 'views/editUserView'),
   HomePageView      = require('views/homePageView'),
@@ -35,21 +36,29 @@ define(function(require){
     $('.footer').html(this.footerView.render());
 
     var router = new MainRouter();
+    var auth  = new AuthModel();
     var userList = new UserListView();
 
     var editUserView = new EditUserView({
       router: router
+      , auth: auth
     });
     var homePageView = new HomePageView({
       router: router
+      , auth: auth
     });
 
     var viewUserView = new ViewUserView({
       router: router
+      , auth: auth
     });
 
-    var signInView = new SignInView();
-    var chatView = new ChatView();
+    var signInView = new SignInView({
+        auth: auth
+    });
+    var chatView = new ChatView({
+        auth: auth
+    });
 
     router.on('route:userChat', function(){
       chatView.render();

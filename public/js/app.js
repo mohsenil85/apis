@@ -8,7 +8,7 @@ define(function (require) {
       MainRouter    = require('router/MainRouter')
 
     var initialize = function(){
-       MainRouter.initialize();
+      MainRouter.initialize();
 
     }
     return {

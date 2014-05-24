@@ -17,8 +17,10 @@ define(function(require){
 
         render : function(options){
             var that = this; 
-            if(options.id){
-                console.log(options);
+            var loggedIn = this.options.auth.get('loggedIn');
+            var idsMatch = this.options.auth.get('id') === options.id;
+            if(loggedIn && idsMatch){
+                //console.log(options);
                 that.user = new UserModel({id: options.id });
                 that.user.fetch({
                     success: function(user){
@@ -39,7 +41,7 @@ define(function(require){
         },
 
         saveUser: function(ev){
-            console.log('this');
+            //console.log('this');
             
             var that = this;
             var userDetails = $(ev.currentTarget).serializeObject();

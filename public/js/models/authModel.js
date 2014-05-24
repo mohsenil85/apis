@@ -9,6 +9,10 @@ define(function(require){
       options = this.options || {};
     },
     */
+   defaults : {
+     loggedIn : false,
+     id : null
+   },
     urlRoot : 'http://localhost:7000/api/auth/:userName'
   });
   return AuthModel;
