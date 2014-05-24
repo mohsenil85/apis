@@ -1,16 +1,5 @@
 //bootstrap for app
 require.config({
-    /*
-    shim: {
-        'backbone' : {
-            deps: ['underscore', 'jquery'],
-            exports: 'Backbone'
-        },
-        'underscore': {
-            exports: '_'
-        }
-    },
-    */
     paths: {
         bootstrap: '../bower_components/bootstrap/dist/js/bootstrap.min',
 
