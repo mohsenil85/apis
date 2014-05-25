@@ -8,17 +8,24 @@ define(function(require){
   ChatTemplate      = require('text!../templates/chatTemplate.html'),
   UserModel         = require('models/userModel'),
   cookie            = require('cookie'),
-  ChatModel         = require('models/chatModel'),
+  io                = require('io'),
+  //ChatModel         = require('models/chatModel'),
   serializeObject   = require ('serializeObject' )
 
   var ChatView = Backbone.View.extend({
     initialize : function(options){
       this.options = options || {};
+      var socket = io.connect('http://localhost');
+      socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+      });
     },
     el: '.page',
 
     events:{
-      'click .chat-button' : 'sendChat'
+      'click .chat-button' : 'sendChat',
+      'click .recv-button' : 'recvChat'
     },
 
     render : function(options){
@@ -39,13 +46,27 @@ define(function(require){
             Backbone.history.navigate('', {trigger: true});
           }
         })
+      } else {
+
+        console.log('other branch hit');
+        Backbone.history.navigate('/auth/', {trigger: true});
       } 
     },
 
     sendChat: function(ev){
-      var chat = new ChatModel();
-      console.log('chatting....');
-
+      var socket = io.connect('http://localhost');
+      console.log('sendChat');
+      //var chat = new ChatModel();
+      //chat.send();
+      //chat.message();
+      socket.emit('send', { my: 'data' });
+    },
+    recvChat: function(ev){
+      var socket = io.connect('http://localhost');
+      console.log('recvChat');
+      socket.on('message', function(data){
+        console.log(data);
+      });
     }
 
   });

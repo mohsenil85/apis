@@ -5,16 +5,20 @@ define(function(require){
   io = require('io')
 
   var ChatModel = Backbone.Model.extend({
-    
-    initialize: function(){
+
     messages : [],
     socket: io.connect('http://localhost/:7000'),
+    message : function(){
 
-      socket.on('message', function(data){
-        console.log('hahahaha');
+
+      this.socket.on('message', function(data){
+        console.log(data);
       })
+    },
+    send : function(){
+      this.socket.emit('send',  {hello:"world "});
     }
-    
+
   });
   return ChatModel;
 });
