@@ -9,17 +9,13 @@ define(function(require){
   UserModel         = require('models/userModel'),
   cookie            = require('cookie'),
   io                = require('io'),
-  //ChatModel         = require('models/chatModel'),
+  ChatModel         = require('models/chatModel'),
   serializeObject   = require ('serializeObject' )
 
   var ChatView = Backbone.View.extend({
     initialize : function(options){
       this.options = options || {};
-      var socket = io.connect('http://localhost');
-      socket.on('news', function (data) {
-        console.log(data);
-        socket.emit('my other event', { my: 'data' });
-      });
+      var chat = new ChatModel();
     },
     el: '.page',
 
@@ -54,18 +50,19 @@ define(function(require){
     },
 
     sendChat: function(ev){
-      var socket = io.connect('http://localhost');
       console.log('sendChat');
       //var chat = new ChatModel();
       //chat.send();
       //chat.message();
-      socket.emit('send', { my: 'data' });
+      this.chat.socket.emit('send', { my: 'data' });
     },
     recvChat: function(ev){
-      var socket = io.connect('http://localhost');
       console.log('recvChat');
-      socket.on('message', function(data){
+      this.chat.socket.on('message', function(data){
         console.log(data);
+      });
+      this.chat.socket.on('thing', function(data){
+        console.log('got:' + data);
       });
     }
 
