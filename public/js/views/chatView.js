@@ -50,11 +50,12 @@ define(function(require){
     },
 
     sendChat: function(ev){
+      console.log(this);
       console.log('sendChat');
       //var chat = new ChatModel();
       //chat.send();
       //chat.message();
-      this.chat.socket.emit('send', { my: 'data' });
+      chat.socket.emit('send', { my: 'data' });
     },
     recvChat: function(ev){
       console.log('recvChat');

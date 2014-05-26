@@ -6,8 +6,10 @@ define(function(require){
 
   var ChatModel = Backbone.Model.extend({
 
-    messages : [],
-    socket: io.connect('http://localhost/:7000'),
+    initialize : function(options){
+      var messages = [];
+      var socket = io.connect('http://localhost/:7000');
+    },
     message : function(){
 
 
